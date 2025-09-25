@@ -242,34 +242,9 @@ const ServiceDetail = ({ serviceType = 'web-development' }) => {
 
       
 
-      {/* Bottom right buttons */}
-      <div className="fixed bottom-8 right-8 flex flex-col gap-3 z-50">
-        <motion.button
-          className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full text-white font-semibold flex items-center gap-2 shadow-lg transition-all duration-300"
-          whileHover={{ scale: 1.05, x: -5 }}
-        >
-          Use For Free
-          <ArrowRight className="w-4 h-4" />
-        </motion.button>
-        
-        <motion.button
-          className="bg-black/50 backdrop-blur-sm border border-gray-700 hover:border-gray-600 px-6 py-2 rounded-full text-white text-sm hover:bg-gray-800/50 transition-all duration-300 flex items-center gap-2"
-          whileHover={{ scale: 1.05, x: -5 }}
-        >
-          Another AI Template
-          <ArrowRight className="w-3 h-3" />
-        </motion.button>
-      </div>
+     
 
-      {/* Framer watermark */}
-      <div className="fixed bottom-6 right-6 z-40">
-        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-2 flex items-center gap-2">
-          <div className="w-4 h-4 bg-white rounded-sm flex items-center justify-center">
-            <span className="text-black text-xs font-bold">F</span>
-          </div>
-          <span className="text-white text-xs font-medium">Made in Framer</span>
-        </div>
-      </div>
+    
     </div>
   )
 }
