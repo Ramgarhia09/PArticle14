@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import {  Plus, Minus, Users, Clock, TrendingUp, Eye, Zap } from 'lucide-react'
+import { Plus, Minus, Users, Clock, TrendingUp, Eye, Zap } from 'lucide-react'
 
 const About = () => {
   const [openFAQ, setOpenFAQ] = useState(-1)
@@ -52,7 +52,7 @@ const About = () => {
         x: {
           repeat: Infinity,
           repeatType: "loop",
-          duration:3,
+          duration: 3,
           ease: "linear",
         },
       },
@@ -344,7 +344,7 @@ const About = () => {
                   Driving Innovation Forward
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
-                  We constantly push the boundaries of what's possible with AI technology, 
+                  We constantly push the boundaries of what&apos;s possible with AI technology, 
                   creating cutting-edge automation solutions.
                 </p>
               </div>
@@ -361,7 +361,7 @@ const About = () => {
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">
-                  Committed to Integrity & Trust
+                  Committed to Integrity &amp; Trust
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                   We build transparent, secure, and reliable solutions that businesses 
@@ -381,11 +381,11 @@ const About = () => {
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">
-                  Empowering Business Growth
+                  Designed for Efficiency
                 </h3>
                 <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
-                  We help businesses scale with smart efficiency, reducing manual tasks and 
-                  optimizing operations.
+                  Our automations are built with speed, scalability, and user experience in mind, 
+                  helping businesses achieve more with less effort.
                 </p>
               </div>
             </motion.div>
@@ -402,56 +402,46 @@ const About = () => {
             className="text-center mb-12 sm:mb-16"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 px-2">
-              We've Got the Answers You're Looking For
+              We&apos;ve Got the Answers You&apos;re Looking For
             </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-400">
-              Quick answers to your AI automation questions.
+            <p className="text-base sm:text-lg text-gray-400">
+              Find the information you need quickly with our FAQs.
             </p>
           </motion.div>
 
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-4 sm:space-y-6">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gray-800/50 border border-gray-700 rounded-xl sm:rounded-2xl overflow-hidden"
+                className="border border-gray-700 rounded-xl overflow-hidden"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors"
+                  className="w-full flex items-center justify-between p-4 sm:p-6 text-left"
                 >
-                  <span className="text-white font-semibold text-sm sm:text-base lg:text-lg pr-4">
+                  <span className="text-base sm:text-lg lg:text-xl font-semibold text-white">
                     {faq.question}
                   </span>
-                  <motion.div
-                    animate={{ rotate: openFAQ === index ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex-shrink-0"
-                  >
-                    {openFAQ === index ? (
-                      <Minus className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
-                    ) : (
-                      <Plus className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
-                    )}
-                  </motion.div>
+                  {openFAQ === index ? (
+                    <Minus className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
+                  ) : (
+                    <Plus className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
+                  )}
                 </button>
 
                 <AnimatePresence>
                   {openFAQ === index && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
+                      animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
+                      className="px-4 sm:px-6 pb-4 sm:pb-6"
                     >
-                      <div className="px-4 sm:px-6 lg:px-8 pb-4 sm:pb-5 lg:pb-6">
-                        <div className="border-t border-gray-700/50 pt-4 sm:pt-5 lg:pt-6">
-                          <p className="text-gray-300 text-sm sm:text-base">{faq.answer}</p>
-                        </div>
-                      </div>
+                      <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+                        {faq.answer}
+                      </p>
                     </motion.div>
                   )}
                 </AnimatePresence>
