@@ -220,7 +220,7 @@ const Footer = () => {
           className="py-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <div className="text-gray-500 text-sm">
-            © 2025 Particle. All rights reserved.
+            © 2025 Particle14. All rights reserved.
           </div>
           
           <div className="flex items-center gap-6 text-sm text-gray-500">
@@ -252,5 +252,6 @@ const Footer = () => {
     </footer>
   )
 }
+
 
 export default Footer
